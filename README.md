@@ -1,6 +1,6 @@
 # 🪨📄✂️ Rock Paper Scissors  
 *A simple browser-based Rock–Paper–Scissors game built with HTML, CSS, and JavaScript.*  
-
+![Demo game](./img//demo.png)
 ---
 
 ## 🎮 Overview
