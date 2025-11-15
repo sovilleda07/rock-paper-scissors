@@ -1,6 +1,6 @@
 # 🪨📄✂️ Rock Paper Scissors  
 *A simple browser-based Rock–Paper–Scissors game built with HTML, CSS, and JavaScript.*  
-![Demo game](./img//demo.png)
+![Demo game](./img/demo.png)
 ---
 
 ## 🎮 Overview
@@ -15,6 +15,15 @@ This is a web-based **Rock Paper Scissors** game where the player competes again
 - Scoreboard saved in browser storage
 - Reset score button
 - Simple and clean UI
+
+---
+
+## 💻 Technologies Used
+
+- **HTML5**: Structure of the game interface
+- **CSS3**: Styling
+- **JavaScript**: Game logic and DOM manipulation
+- **LocalStorage**: For saving game progress
 
 ---
 
@@ -45,26 +54,37 @@ The score uses `localStorage` to persist after refresh.
 
 ---
 
-## ▶️ How to Run
-Just open **index.html** in any modern browser:
+## Live Demo
 
-### Option 1 — Direct:
-Double-click `index.html`
-
-### Option 2 — Local server (optional):
-Use VS Code Live Server: 
-- Right-click → "Open with Live Server"
-
-No installation or dependencies required.
+Experience the game live: [Rock, Paper, Scissors Game](https://sovilleda07.github.io/rock-paper-scissors/)
 
 ---
 
-## 📌 Future Improvements
-- Add animations or sound effects  
-- Add keyboard shortcuts  
-- Add dark/light theme toggle  
-- Add match history  
-- Add difficulty levels (random, pattern-based AI)
+## ✂️ How to Play
+1. Open the game in your web browser.
+2. Click on your choice of Rock, Paper, or Scissors.
+3. View the computer's choice and the result.
+4. Play again!
+
+---
+
+## ▶️ How to Run
+
+To run this project locally:
+
+ 1. Clone the repository: 
+
+```bash
+  git clone https://github.com/sovilleda07/rock-paper-scissors.git
+```
+
+ 2. Navigate to the project directory: 
+
+```bash
+  cd rock-paper-scissors-game
+```
+
+ 3. Open `index.html` in your preferred web browser 
 
 ---
 
