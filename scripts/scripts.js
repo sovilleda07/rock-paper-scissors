@@ -57,6 +57,14 @@ function playGame(playerMove) {
       Computer`;
 }
 
+function resetScore() {
+  score.wins = 0;
+  score.losses = 0;
+  score.ties = 0;
+  localStorage.removeItem('score');
+  updateScoreElement();
+}
+
 let isAutoPlaying = false;
 let intervalId;
 
@@ -84,6 +92,46 @@ function autoPlay() {
 document.querySelector('.js-auto-play-button').addEventListener('click', () => {
   autoPlay();
 });
+
+document.querySelector('.js-rock-button').addEventListener('click', () => {
+  playGame('rock');
+});
+
+document.querySelector('.js-paper-button').addEventListener('click', () => {
+  playGame('paper');
+});
+
+document.querySelector('.js-scissors-button').addEventListener('click', () => {
+  playGame('scissors');
+});
+
+function displayConfirmMessage(message = '') {
+  document.querySelector('.js-confirm-reset-score').innerHTML = message;
+}
+
+function showResetConfirmation() {
+  let resetScoreHTML = `
+    Are you sure you want to reset the score?
+    <button class="js-reset-score-yes-button reset-confirm-button">Yes</button>
+    <button class="js-reset-score-no-button reset-confirm-button">No</button>
+  `;
+
+  displayConfirmMessage(resetScoreHTML);
+
+  document.querySelector('.js-reset-score-yes-button').addEventListener('click', () => {
+    resetScore();
+    displayConfirmMessage();
+  });
+
+  document.querySelector('.js-reset-score-no-button').addEventListener('click', () => {
+    displayConfirmMessage();
+  });
+}
+
+document.querySelector('.js-reset-score-button').addEventListener('click', () => {
+  showResetConfirmation();
+});
+
 
 function updateScoreElement() {
   document.querySelector('.js-score')
