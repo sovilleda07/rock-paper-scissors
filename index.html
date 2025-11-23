@@ -1,33 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rock Paper Scissors</title>
   <link rel="stylesheet" href="./css/styles.css">
 </head>
+
 <body>
-  <p class="title">Rock Paper Scissors</p>
+  <div class="game-container">
+    <h1 class="title">Rock Paper Scissors</h1>
 
-  <button class="move-button js-rock-button">
-    <img src="./img/rock-emoji.png" alt="rock" class="move-icon">
-  </button>
-  <button class="move-button js-paper-button">
-    <img src="./img/paper-emoji.png" alt="paper" class="move-icon">
-  </button>
-  <button class="move-button js-scissors-button">
-    <img src="./img/scissors-emoji.png" alt="scissors" class="move-icon">
-  </button>
-  <p class="js-result result"></p>
-  <p class="js-moves moves"></p>
-  <p class="js-score score"></p>
+    <div class="moves-container">
+      <button class="move-button js-rock-button">
+        <img src="./img/rock-emoji.png" alt="rock" class="move-icon">
+      </button>
+      <button class="move-button js-paper-button">
+        <img src="./img/paper-emoji.png" alt="paper" class="move-icon">
+      </button>
+      <button class="move-button js-scissors-button">
+        <img src="./img/scissors-emoji.png" alt="scissors" class="move-icon">
+      </button>
+    </div>
 
-  <button class="reset-score-button js-reset-score-button">Reset Score</button>
+    <p class="js-result result"></p>
+    <p class="js-moves moves"></p>
+    <p class="js-score score"></p>
 
-  <button class="auto-play-button js-auto-play-button">Auto Play</button>
+    <div class="buttons-container">
+      <button class="reset-score-button js-reset-score-button">
+        Reset Score
+      </button>
+      <button class="auto-play-button js-auto-play-button">
+        Auto Play
+      </button>
+    </div>
 
-  <p class="js-confirm-reset-score"></div>
+    <p class="instructions">
+      Controls:<br>
+      - Press <strong>P</strong> to play Paper<br>
+      - Press <strong>R</strong> to play Rock<br>
+      - Press <strong>S</strong> to play Scissors<br>
+      - Press <strong>A</strong> for Auto Play<br>
+      - Press <strong>Backspace</strong> to reset score
+    </p>
 
-  <script src="./scripts/scripts.js""></script>
+    <p class="js-confirm-reset-score confirm-reset-score"></p>
+  </div>
+
+  <script src="./scripts/scripts.js"></script>
 </body>
+
 </html>

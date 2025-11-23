@@ -37,19 +37,25 @@ function playGame(playerMove) {
     }
   }
 
+  const resultElement = document.querySelector('.js-result');
+  resultElement.innerHTML = result;
+
+  resultElement.classList.remove('win', 'lose', 'tie');
+
   if (result === 'You win.') {
     score.wins += 1;
+    resultElement.classList.add('win');
   } else if (result === 'You lose.') {
     score.losses += 1;
+    resultElement.classList.add('lose');
   } else if (result === 'Tie.') {
     score.ties += 1;
+    resultElement.classList.add('tie');
   }
 
   localStorage.setItem('score', JSON.stringify(score));
 
   updateScoreElement();
-
-  document.querySelector('.js-result').innerHTML = result;
 
   document.querySelector('.js-moves').innerHTML = `You
       <img src="./img/${playerMove}-emoji.png" alt="rock" class="move-icon">
@@ -63,6 +69,9 @@ function resetScore() {
   score.ties = 0;
   localStorage.removeItem('score');
   updateScoreElement();
+
+  document.querySelector('.js-result').innerHTML = '';
+  document.querySelector('.js-moves').innerHTML = '';
 }
 
 let isAutoPlaying = false;
@@ -112,8 +121,10 @@ function displayConfirmMessage(message = '') {
 function showResetConfirmation() {
   let resetScoreHTML = `
     Are you sure you want to reset the score?
-    <button class="js-reset-score-yes-button reset-confirm-button">Yes</button>
-    <button class="js-reset-score-no-button reset-confirm-button">No</button>
+    <div class="buttons-container">
+      <button class="js-reset-score-yes-button reset-confirm-button">Yes</button>
+      <button class="js-reset-score-no-button reset-confirm-button">No</button>
+    </div>
   `;
 
   displayConfirmMessage(resetScoreHTML);
