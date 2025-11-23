@@ -57,6 +57,34 @@ function playGame(playerMove) {
       Computer`;
 }
 
+let isAutoPlaying = false;
+let intervalId;
+
+function autoPlay() {
+  const button = document.querySelector('.js-auto-play-button');
+
+  if (!isAutoPlaying) {
+    intervalId = setInterval(() => {
+      const playerMove = pickComputerMove();
+      playGame(playerMove);
+    }, 1000);
+
+    isAutoPlaying = true;
+
+    button.innerHTML = 'Stop Playing';
+  } else {
+    clearInterval(intervalId);
+
+    isAutoPlaying = false;
+
+    button.innerHTML = 'Auto Play';
+  }
+}
+
+document.querySelector('.js-auto-play-button').addEventListener('click', () => {
+  autoPlay();
+});
+
 function updateScoreElement() {
   document.querySelector('.js-score')
     .innerHTML = `Wins: ${score.wins}, Losses: ${score.losses}, Ties: ${score.ties}`;
